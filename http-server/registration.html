@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration Form</title>
+  <style>
+      table {
+        border-collapse: collapse;
+        margin-top: 50px;
+      }
+      th,
+      td {
+        border: 2px solid #ddd;
+        padding: 10px;
+        text-align: left;
+        font-size: 16px;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+  
+  
+</style>
+</head>
+<body>
+  <div>
+    <center>
+      <h1>Registration Form</h1>
+    </center>
+    <center>
+      <form id="user-form" >
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" minlength="8" required>
+        </div>
+        <div>
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" onchange="isValid()" required>
+        </div>
+        <div>
+          <label for="acceptTerms">Accept terms and conditions:</label>
+          <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+        </div>
+        <button type="submit" onclick="isValid()">Submit</button>
+      </form>
+    </center>
+  </div>
+  <div>
+    <center>
+        <div  class="relative bg-gray px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10">
+            <div class="mx-auto">
+                <h2 class="text-3xl text-center font-bold leading-tight"> Entries</h2>
+                <div class="divide-y divide-gray-300/50 py-3" id="user-entries"></div>
+
+            </div>
+        </div>
+    </center>
+  <script src="index.js"></script>
+</body>
+</html>
