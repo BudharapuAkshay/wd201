@@ -30,15 +30,14 @@ dueDate < new Date(now.getTime() + 24 * 60 * 60 * 1000)
 };
 
 const dueLater = () => {
-const now = new Date();
-return all.filter((todoItem) => {
-const dueDate = new Date(todoItem.dueDate);
-return (
-!todoItem.completed &&
-dueDate >= new Date(now.getTime() + 24 * 60 * 60 * 1000)
-);
-});
-};
+  const laterItems = all.filter(item => {
+    return new Date(item.dueDate) > new Date() && !item.completed
+  })
+  laterItems.sort((a, b) => {
+    return new Date(a.dueDate) - new Date(b.dueDate);
+  })
+  return laterItems;
+}
 
 const toDisplayableList = (list) => {
 return list
