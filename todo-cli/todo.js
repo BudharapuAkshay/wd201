@@ -13,7 +13,7 @@ const todoList = () => {
 
     for (let task of all) {
     if (task.dueDate === yesterday) {
-        if (task.isComplete === true) {
+        if (task.completed === true) {
         taskCompleted = '[x]';
         }
         overdueTasks.push(`${taskCompleted} ${task.title} ${task.dueDate}`);
@@ -30,7 +30,7 @@ const todoList = () => {
 
         for (let task of all) {
         if (task.dueDate === today) {
-            if (task.isComplete === true) {
+            if (task.completed === true) {
             isTaskComplete = '[x]';
             }
             tasksForToday.push(`${isTaskComplete} ${task.title}`);
@@ -48,7 +48,7 @@ const todoList = () => {
 
     for (let task of all) {
         if (task.dueDate === tomorrow) {
-        if (task.isComplete === true) {
+        if (task.completed === true) {
             status = '[x]';
         }
         laterTasks.push(`${status} ${task.title} ${task.dueDate}`);
